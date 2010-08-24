@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head_title %}{{ block.super }} Inicio{% endblock %}
+{% block meta_name_description  %}
+<meta name="description" content="Buscador de noticias.">
+{% endblock %}
+
+{% block page_title %}Bienvenido a La Prensa de Hoy{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li class="current"><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+	</ul>
+    <div id="logon">
+        <a href="/usuarios/login/?next=/">Login</a><span> / </span><a href="/usuarios/register/">Registrarse</a>
+    </div>		
+</div>	
+{% endblock %}
+
+{% block contenido %}
+    <div id="content_resultados">
+        <div class="text_resultados">
+            <h2>Resultados de la Busqueda</h2>
+            {% comment %}            
+				{% for resumen in resumenes %}
+				   
+				<p>
+				{{ resumen.fecha_publicacion|date:"j \de F, Y" }}
+				<br>
+				{{ parrafos }}
+				</p>								
+				{% endfor %}
+			{% endcomment %}
+			{% for lista in lista_resumenes %}
+				<div class="resultados"
+				<div class="fecha_resultados">{{ lista.0|date:"j \de F, Y" }}</div>
+				<br>
+				<div class="parrafo_resultados">{{ lista.1|safe }}</div>
+				<div class="fecha_resultados"><a href="{{ lista.2 }}">&laquo;&laquo;&nbsp;&nbsp;Leer resumen&nbsp;&nbsp;&raquo;&raquo;</a></div>
+				</div>
+				<br>
+			{% endfor %}
+        </div> 
+    </div>
+{% endblock contenido %}

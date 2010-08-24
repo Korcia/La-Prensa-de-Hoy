@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>La Prensa de Hoy - Toda la actualidad económica a primera hora de la mañana | {% block head_title %}{% endblock %}</title>
+    {% block meta_name_description %}{% endblock %}
+
+	<meta name="keywords" content="prensa, resumen, económica, economía, actualidad" />
+	<meta http-equiv="content-language" content="es-ES">
+	<meta name="language" content="spanish">
+	<meta name="Clasiagenda" content="" />
+	<link href="/static/css/resumen.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script type='text/javascript' src='/static/js/jquery-1.3.2.min.js'></script>
+    <script type='text/javascript' src='/static/js/lavalamp.min.js'></script>
+    <script type='text/javascript' src='/static/js/easing.js'></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    $(function(){$(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+    /* ]]> */
+    </script>
+
+	{% block estilo %}{% endblock %}
+	{% block js %}{% endblock %}
+
+	<!--[if IE]>
+	<style>
+	legend {
+	position: absolute;
+	top: -.5em;
+	left: .2em;
+	padding-bottom: .1em;
+	}
+	
+	fieldset {
+	position: relative;
+	margin-top: 1em;
+	padding-top: .8em;
+	padding-left: .4em;
+	}
+	fieldset input {
+	left: .2em;
+	}
+	</style>
+	<![endif]--> 
+</head>
+
+<body>
+<div id="wrapper">
+
+<!-- start header -->
+    <div id="header">
+    
+    <h1><a href="/"></a></h1>
+    <form action="">
+        <input type="text" id="s" name="q" value="Buscar resúmenes..." onfocus="if (value =='Buscar resúmenes...'){value =''}" onblur="if (value ==''){value='Buscar resúmenes...'}" />
+        <input type="submit" value=" " id="searchsubmit"/>
+    </form>
+   	<div id="usuarios">
+    	<ul>
+       		{% if user.is_authenticated %}
+       			<li><a href="/usuarios/logout/">Logout</a></li>
+       		{% else %}
+       			<li><a href="/usuarios/login/">Login</a><span> / </span></li>
+       			<li><a href="/usuarios/register/">Registrarse</a></li>
+       		{% endif %}
+    	</ul>
+   	</div>
+    
+    </div>
+{% block navi %}
+{% endblock %}
+
+<!-- end header -->
+
+	<!-- start page -->
+	{% block contenido %}
+	{% endblock %}
+	{% comment %} 
+	<div id="page">
+		<!-- start content -->
+		{% block content %}
+		{% endblock %}
+		<!-- end content -->
+		
+		<!-- start sidebars -->
+		{% block sidebar %}
+		{% endblock %}
+		<!-- fin div sidebars -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	{% endcomment %}
+	<!-- end page -->
+
+<!-- fin div wrapper -->
+
+</div>
+</body>
+</html>

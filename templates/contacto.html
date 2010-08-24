@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head_title %}{{ block.super }} Contacto{% endblock %}
+{% block meta_name_description %}
+<meta name="description" content="Contacto con Clasiagenda. Sugerencias, Información.">
+{% endblock %}
+
+{# {% block page_title %}Bienvenido a ClasiAgenda{% endblock %} #}
+
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li class="current"><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+		<li><a title="mi cuenta" href="/usuarios/mi_cuenta">Mi Cuenta</a></li>
+	</ul>
+</div>	
+{% endblock %}
+
+{% block contenido %}
+<div class="span-13 prepend-1 colborder" id="content-main">
+<div class="contactoouter">
+	<div class="contactoiner">
+
+    <fieldset>
+        <div class="contactotitle">Contáctenos</div>
+        {% if form.errors %}
+            <p style="color: red;">
+            Por favor, corrija el error{{ form.errors|pluralize }} de abajo.
+            </p>
+        {% endif %}
+        <form id="contactoform" action="" method="post">
+            <table>
+                {{ form.as_table }}
+            </table>
+            <p id="contacto_button">
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </fieldset>
+    </div>
+</div>
+</div>
+{% endblock contenido %}
+   

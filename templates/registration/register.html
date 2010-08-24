@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li class="current"><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+	</ul>
+    <div id="logon">
+        <a href="/usuarios/login/?next=/">Login</a><span> / </span><a href="/usuarios/register/">Registrarse</a>
+    </div>		
+</div>	
+{% endblock %}
+
+{% block contenido %}
+<div class="span-13 prepend-1 colborder" id="content-main">
+<div class="loginouter">
+	<div class="logininer">
+	<fieldset>
+	<div class="logintitle">Suscripción</div>
+	{% if form.errors %}
+		<ul class="errorlist">
+			<li>Su registro contiene errores.</li>
+		</ul>
+		<br />
+	{% endif %}
+
+	<form action="." method="post">
+		<table summary="Registrarse" id="login">
+		<tr>
+			<td>{{ form.username.label_tag }}:</td>
+			<td>{{ form.username }}</td>
+		</tr>
+		<tr>
+			<td>{{ form.password1.label_tag }}:</td>
+			<td>{{ form.password1 }}</td>
+		</tr>
+		<tr>
+			<td>{{ form.password2.label_tag }}:</td>
+			<td>{{ form.password2 }}</td>
+		</tr>
+		<tr>
+			<td>{{ form.email.label_tag }}:</td>
+			<td>{{ form.email }}</td>
+		</tr>
+		</table>
+		
+        <p id="contacto_button">
+        	<input type="hidden" name="next" value="{{ next }}" />
+        	<input type="submit" value="Registrarse">
+        </p>
+				
+	</form>
+	</fieldset>
+	</div>
+</div>
+</div>	
+{% endblock %}

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>La Prensa de Hoy - Toda la actualidad económica a primera hora de la mañana | {% block head_title %}{% endblock %}</title>
+    {% block meta_name_description %}{% endblock %}
+
+	<meta name="keywords" content="prensa, resumen, económica, economía, actualidad" />
+	<meta http-equiv="content-language" content="es-ES">
+	<meta name="language" content="spanish">
+	<meta name="Clasiagenda" content="" />
+	<link href="/static/css/cssreset.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script type='text/javascript' src='/static/js/jquery.min.js'></script>
+    <script type='text/javascript' src='/static/js/lavalamp.min.js'></script>
+    <script type='text/javascript' src='/static/js/easing.js'></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    $(function(){$(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+    /* ]]> */
+    
+    </script>
+
+	{% block estilo %}{% endblock %}
+	{% block js %}{% endblock %}
+
+	<!--[if IE]>
+	<style>
+	legend {
+	position: absolute;
+	top: -.5em;
+	left: .2em;
+	padding-bottom: .1em;
+	}
+	
+	fieldset {
+	position: relative;
+	margin-top: 1em;
+	padding-top: .8em;
+	padding-left: .4em;
+	}
+	fieldset input {
+	left: .2em;
+	}
+	</style>
+	<![endif]--> 
+</head>
+
+<body>
+<div id="wrapper">
+
+<!-- start header -->
+    <div id="header">
+    	<h1><a href="/"></a></h1>
+    		<form method="GET" action="/buscar/">
+        	<input type="text" id="s" name="keywords" maxlength="40" value="Buscar resúmenes..." onfocus="if (value =='Buscar resúmenes...'){value =''}" onblur="if (value ==''){value='Buscar resúmenes...'}" />
+        	<input type="hidden" name="tipobusqueda" value="keywordsearch" />
+        	<input type="submit" value=" " id="searchsubmit"/>
+    	</form>
+    	<div id="usuarios">
+    		<ul>
+        		{% if user.is_authenticated %}
+        			<li><a href="/usuarios/logout/">Logout</a></li>
+        		{% else %}
+        			<li><a href="/usuarios/login/">Login</a><span> / </span></li>
+        			<li><a href="/usuarios/register/">Registrarse</a></li>
+        		{% endif %}
+    		</ul>
+    	</div>
+    </div>
+{% block navi %}
+{% endblock %}
+
+<!-- end header -->
+
+	<!-- start page -->
+{% block contenido %}
+{% endblock %}
+	<!-- end page -->
+
+<!-- fin div wrapper -->
+</div>
+
+<div id="footer">
+	<p class="copyright">&copy;&nbsp;&nbsp;2009-2010 &nbsp;&bull;&nbsp; Diseñado por <a href="http://clasiagenda.com/contacto/">Clasiagenda</a>.</p>
+    <!-- AddThis Button BEGIN -->
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=korcia"><img src="http://s7.addthis.com/static/btn/v2/lg-share-es.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=korcia"></script>
+<!-- AddThis Button END -->
+    
+	<a class="facebook" target="_blank" href="http://www.facebook.com/profile.php?v=photos&ref=profile&id=100000758953544#!/profile.php?v=wall&ref=profile&id=100000758953544"></a>
+    <a class="twitter" target="_blank" href="http://www.twitter.com/prensadehoy"></a>
+	<p class="link"><a href="#">Política de Privacidad</a>&nbsp;&#8226;&nbsp;<a href="#">Términos de Uso</a></p>
+</div>
+
+</body>
+</html>

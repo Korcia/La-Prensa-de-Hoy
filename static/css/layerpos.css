@@ -1,0 +1,142 @@
+/* ID's posicionamiento */
+
+#contorno, #contenido {
+width: 990px;
+max-width: 990px;
+float: left;
+padding: 0;
+margin: 0;
+}
+
+#cabecera {
+width: auto;
+padding: 0px 5px 0px 5px;
+max-width: 980px;
+}
+
+
+#principal, #principal_home {
+padding: 0px 5px 0px 5px;
+float: left;
+margin: 7px 0px 0px 0px;
+
+
+}
+
+#principal_4col {
+padding: 0px 5px 0px 5px;
+margin: 7px 0px 0px 0px;
+}
+
+#principal, #col_triple {
+width: 670px;
+max-width: 665px;
+width: 675px !important
+}
+
+#principal_home {
+width: 518px;
+max-width: 518px;
+}
+
+#col_simple {
+width: 980px;
+max-width: 980px;
+}
+
+#col_doble {
+}
+
+#col_triple {
+float: left;
+padding: 5px;
+margin: 0 5px 0 5px;
+width: 720px;
+max-width: 710px;
+}
+
+#col_izq_mitad, #col_dch_mitad {
+width: 49%;
+margin: 0 0 5px 0;
+}
+
+#col_izq_mitad {
+float: left;
+}
+
+#col_dch_mitad {
+float: right;
+border-left: 1px solid #CCCCCC;
+padding: 0 0 0 4px;
+}
+
+#col_derecha, #col_derecha_home {
+float: right;
+clear: right;
+padding: 0px 5px 5px 5px;
+border-left: 1px solid  #999999;
+margin: 7px 0px 0px 0px;
+border-collapse:collapse;
+}
+
+#col_derecha {
+max-width: 300px !important;
+width: 310px !important;
+max-width: 290px;
+width: 300px;
+float: left;
+}
+
+#col_derecha_home {
+width: 450px;
+max-width: 450px;
+}
+
+#pie {
+padding: 5px;
+}
+
+#TICKER {
+height: 15px;
+overflow: hidden;
+float: left;
+border-top: 1px solid #E7E7E7;
+border-bottom: 1px solid #E7E7E7;
+background: #F0F0F0;
+padding-bottom: 2px;
+}
+
+.col_dch_adapt {
+float: right;
+width: 49%
+}
+
+
+.col_izq_adapt {
+float: left;
+width: 49%;
+}
+
+#col_simple {
+width: 230px;
+max-width: 220px;
+float: right;
+}
+
+#destacado2_home {
+clear: both;
+padding: 5px;
+background: #F0F0F0;
+}
+
+#contenedor_scripts {
+line-height: 0px;
+/*height: 0px;
+width: 0px;
+display: none;*/
+}
+
+#id_seccion {
+float: left;
+margin: 0 0 0 15px;
+}

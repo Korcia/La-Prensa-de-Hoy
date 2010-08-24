@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block head_title %}{{ block.super }} Búsqueda{% endblock %}
+{% block meta_name_description %}
+<meta name="description" content="Búsqueda de conciertos de música clásica.Buscar por intérpretes, compositores, época, genero, precio, ciclos de música clásica y fechas.">
+{% endblock %}
+
+{% block estilo %}
+ <link rel="stylesheet" type="text/css" href="/static/css/jquery.autocomplete.css" /> 
+<!-- <link rel="stylesheet" type="text/css" href="/static/css/thickbox.css" /> -->
+{% endblock %}
+
+{% block js %}
+    <!-- <script type="text/javascript" src="/static/js/autocomplete/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/js/autocomplete/jquery.bgiframe.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/js/autocomplete/jquery.ajaxQueue.js"></script> -->
+    <!-- <script type="text/javascript" src="/static/js/autocomplete/thickbox-compressed.js"></script> -->
+    <script type="text/javascript" src="/static/js/autocomplete/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="/static/js/autocomplete/localdata.js"></script>
+    <script type='text/javascript' src='/static/js/jquery.lavalamp.min.js'></script>
+
+    <script type="text/javascript">
+    $().ready(function() {
+
+    function log(event, data, formatted) {
+        $("<li>").html( !data ? "No match!" : "Selected: " + formatted).appendTo("#result");
+    }
+    
+    function formatItem(row) {
+        return row[0] + " (<strong>id: " + row[1] + "</strong>)";
+    }
+    function formatResult(row) {
+        return row[0].replace(/(<.+?>)/gi, '');
+    }
+    
+    $("#suggest1").focus().autocomplete(cities);
+    $("#id_keywords").autocomplete(cities, {
+        multiple: true,
+        matchContains: true,
+        multipleSeparator: " ",
+        autoFill: true
+    });
+    
+    $(":text, textarea").result(log).next().click(function() {
+        $(this).prev().search();
+    });
+    $("#scrollChange").click(changeScrollHeight);
+    
+    $("#clear").click(function() {
+        $(":input").unautocomplete();
+    });
+});
+
+    </script>
+
+
+{% endblock %}
+
+{% block page_title %}Buscador La Prensa de Hoy{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li class="current"><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+		<li><a title="mi cuenta" href="/usuarios/mi_cuenta">Mi Cuenta</a></li>
+	</ul>
+</div>	
+{% endblock %}
+
+
+{% block contenido %}
+<div id="content">
+	<div class="text_resultados">
+    <h2>Búsqueda Avanzada</h2>
+    <p>{{ page_body }}</p>
+    {% block form1 %}
+    	<div class="formulario">
+        <form method="get" action=".">
+            <table cellpadding="0" cellspacing="2">
+            {{ form_key.as_table }}
+            </table>
+            <input type="hidden" name="tipobusqueda" value="keywordsearch" />
+            <div class="buscar">
+            <input type="image" src="/static/images/boton_busqueda2.png" align=absmiddle alt="Buscar" />
+            </div>
+        </form>
+        </div>
+    </div>
+    {% endblock %}
+    
+    <br>
+</div>
+{% endblock contenido %}

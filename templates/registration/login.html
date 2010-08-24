@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li class="current"><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+	</ul>
+    <div id="logon">
+        <a href="/usuarios/login/?next=/">Login</a><span> / </span><a href="/usuarios/register/">Registrarse</a>
+    </div>		
+</div>	
+{% endblock %}
+
+
+{% block contenido %}
+<div class="span-13 prepend-1 colborder" id="content-main">
+<div class="loginouter">
+	<div class="logininer">
+	<fieldset>
+	<div class="logintitle">Login</div>
+	{% if form.errors %}
+		<ul class="errorlist">
+			<li>Ha introducido un usuario o clave incorrectos.</li>
+		</ul>
+		<br />
+	{% endif %}
+	<form method="post" action="{% url django.contrib.auth.views.login %}">
+	<table summary="Login" id="login">
+		<tr>
+		    <td>{{ form.username.label_tag }}:</td>
+		    <td>{{ form.username }}</td>
+		</tr>
+		<tr>
+		    <td>{{ form.password.label_tag }}:</td>
+		    <td>{{ form.password }}</td>
+		</tr>
+	</table>
+            <p id="contacto_button">
+            <input type="hidden" name="next" value="{{ next }}" />
+            <input type="submit" value="Login">
+            </p>
+	</form>
+	</fieldset>
+	</div>
+</div>
+</div>
+{% endblock %}

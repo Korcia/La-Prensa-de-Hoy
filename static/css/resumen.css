@@ -1,0 +1,209 @@
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	margin: 0;
+}
+html {
+	padding: 0;
+	border: 0;
+}
+body
+	{
+		font-size:13px;
+		font-family:Arial,Helvetica,sans-serif;
+		background:url(/static/images/bg.png) top center no-repeat #212121;
+		outline: 0;
+		padding: 0;
+		border: 0;
+}
+
+#wrapper { width:960px; overflow:hidden; margin:0px auto; position:relative;}
+#resumen { width:760px; float:right;}
+#toc { width:200px; position:fixed; float:left;}
+#archivos { width:200px; position:fixed; float:left;}
+#toc a { display:block; color:#0094FF;}
+       
+#toc a[title=H1] { font-size:10px;}
+#toc a[title=H2] { font-size:14px;}
+#toc a[title=H3] { font-size:10px;}
+
+/**************************** header *************************/
+#header
+	{
+		position:relative;
+	}
+#header h1 a
+	{
+		width:471px;
+		height:97px;
+		display:block;
+		text-indent:-9999px;
+		overflow:hidden;
+		background:url(/static/images/logo.png) no-repeat;
+	}
+#header form
+	{
+		position:absolute;
+		top:32px;
+		right:0;
+	}
+#header form input
+	{
+		border:none;
+		float:left;
+		margin-top:-2px;
+	}
+#s
+	{
+		width:232px;
+		padding:12px 0 10px 7px;
+		color:#494949;
+		outline:none;
+		text-shadow:0 1px #bfbfbf;
+		background:url(/static/images/searchbg.png) no-repeat top left;
+	}
+#searchsubmit
+	{
+		width:47px;
+		height:40px;
+		cursor:pointer;
+		margin:0 0 0 -7px;
+		background:url(/static/images/searchsub.png) no-repeat top left;
+	}
+#searchsubmit:hover
+	{
+		background-position:0 -40px;
+	}
+#searchsubmit:active
+	{
+		background-position:0 -80px;
+	}
+#usuarios {
+	float: right;
+}
+#usuarios ul {
+	list-style: none outside none;
+}
+#usuarios li {
+	float: left;
+}
+#usuarios a {
+	color: #f9b13e;
+}
+#navi
+	{
+		height:53px;
+		margin-top:21px;
+		margin-bottom: 20px;
+		background:url(/static/images/navibg.png) no-repeat center;
+	}
+#navi ul
+	{
+		list-style:none;
+		padding-left:20px;
+	}
+#navi ul li
+	{
+		text-align:center;
+		width:124px;
+		line-height:53px;
+	}
+#navi a
+	{
+		text-decoration:none;
+		color:#fff;
+		font-size:18px;
+		text-shadow:1px 1px 2px #222;
+	}
+#logon
+	{
+		float:right;
+		margin-right:20px;
+	}
+#logon a,#logon span
+	{
+		line-height:53px;
+		color:#c3c3c3;
+		font-size:13px;
+	}
+#logon a:hover{text-decoration:underline;}
+.lavaLamp
+	{
+		position: relative;
+		margin: 10px 0;
+	}
+.lavaLamp li{float: left;}
+.lavaLamp li.back
+	{
+		background:url(/static/images/libg.png) no-repeat center;
+		width:94px;
+		margin-top:1px;
+		height: 53px;
+		z-index: 1;
+		position: absolute;
+	}
+.lavaLamp li a
+	{
+		color:#000;
+		z-index: 2;
+		text-decoration:none;
+		position: relative;
+		margin: auto 10px;
+	}
+
+.readmore a {
+	color: #f9b744;
+}
+.filas td {
+	text-align: center;
+}
+.filas h2 {
+	color: #fff;
+}
+#resultados caption {
+    color: #fff;
+    font-size: 16px;
+}
+
+/**************************** historicos *************************/
+.sidebar
+	{
+		width: 195px;
+		float:left;
+	}
+.sidebar li
+	{
+		color:#c3c3c3;
+	}
+.sidebaritem
+	{
+		width: 195px;
+		margin-bottom: 30px;
+		margin-top: 40px;
+		padding-bottom: 5px;
+		background: url(/static/images/sidebarbg_center2.png) repeat-y;
+	}
+.sidebaritem_top
+	{
+		height:40px;
+		background:url(/static/images/sidebarbg2.png) no-repeat top;
+	}
+.sidebaritem_bottom
+	{
+		height:5px;
+		background:url(/static/images/sidebarbg2.png) no-repeat bottom;
+	}
+.sidebaritem .title
+	{
+		padding-left:70px;
+		width:100%;
+		color: #000;
+		font-size: 14px;
+	}
+#rango {
+	padding-left: 20px;
+}
+#rango li a {
+	color: #c3c3c3;
+}

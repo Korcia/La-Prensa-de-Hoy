@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Servicios La Prensa de Hoy</title>
+<link rel="stylesheet" type="text/css" href="/static/css/style_iphone.css"/>
+<link href='http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/static/js/iphone-springboard.js"></script>
+<!-- <script type="text/javascript" src="js/js.js"></script> -->
+<script type="text/javascript">
+			
+$(document).ready(function(){
+				
+	//Add click action to tab menu
+	$("#iphone-scrollcontainer #springboard-bar .icon").click(function(){
+				
+		//Find the width of a tab
+		var TabWidth = $(".TabContent:eq(0)").width();
+		if(parseInt($(".TabContent:first").css("margin-left")) > 0)
+			TabWidth += parseInt($(".TabContent:first").css("margin-left"));
+		if(parseInt($(".TabContent:first").css("margin-right")) >0)
+			TabWidth += parseInt($(".TabContent:first").css("margin-right"));
+		//But wait, how far we slide to? Let find out
+		var newLeft = -1* $('.icon').index(this) * TabWidth;
+		//Ok, now slide
+		//newLeft = newLeft + 40
+		$(".AllTabs").animate({
+			left: + newLeft + "px"
+		},1000);
+	});
+});
+		
+</script>
+
+</head>
+
+<body>
+<div id="iphone-scrollcontainer">
+	<div id="springboard-bar">
+		<div class="icon">
+        	  <img src="/static/images/servicios/icon_phone.png" alt="Phone" />
+                  <p class="ico_txt">Phone</p>
+                </div>
+                <div class="icon">
+        	  <img src="/static/images/servicios/icon_mail.png" alt="Mail" />
+                  <p class="ico_txt">Mail</p>
+                </div>
+                <div class="icon">
+        	  <img src="/static/images/servicios/icon_safari.png" alt="Safari" />
+                  <p class="ico_txt">Safari</p>
+                </div>
+                <div class="icon">
+        	  <img src="/static/images/servicios/icon_ipod.png" alt="iPod" />
+                  <p class="ico_txt">iPod</p>
+                </div>
+        </div>
+	<div id="springboard-items">
+    	<div class="row">
+        	<div class="icon upleft">
+        		<a OnClick="window.open('http://es.reuters.com', '_blank'); return false;" href="#" title="Reuters" class="ico_btn">
+        		<img id="reuters" src="/static/images/servicios/icon_reuters.png" alt="Reuters" /></a>
+                <p class="ico_txt">Reuters</p>
+            </div>
+            <div class="icon upleft">
+
+        		<a href="http://www.forexinvestor.es/calendario-economico" target="_blank" title="Calendario" class="ico_btn"><img src="/static/images/servicios/icon_calendar.png" alt="Calendario" /></a>
+                <p class="ico_txt">Calendario</p>
+            </div>
+            <div class="icon upright">
+        		<a href="http://flickr.com/" title="Photos" class="ico_btn"><img src="/static/images/servicios/icon_photos.png" alt="Photos" /></a>
+                <p class="ico_txt">Photos</p>
+            </div>
+            <div class="icon upright">
+
+        		<a href="http://www.apple.com/aperture/" title="Camera" class="ico_btn"><img src="/static/images/servicios/icon_camera.png" alt="Camera" /></a>
+                <p class="ico_txt">Camera</p>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="icon upleft">
+        		<a href="http://www.youtube.com/" title="YouTube" class="ico_btn"><img src="/static/images/servicios/icon_youtube.png" alt="YouTube" /></a>
+                <p class="ico_txt">YouTube</p>
+
+            </div>
+            <div class="icon upleft">
+        		<a href="http://es.finance.yahoo.com/" title="¡Finanzas Yahoo!" class="ico_btn"><img src="/static/images/servicios/icon_stocks.png" alt="¡Finanzas Yahoo!" /></a>
+                <p class="ico_txt">Bolsa</p>
+            </div>
+            <div class="icon upright">
+        		<a href="http://maps.google.es/" title="Google Maps" class="ico_btn"><img src="/static/images/servicios/icon_maps.png" alt="Google Maps" /></a>
+                <p class="ico_txt">Mapas</p>
+
+            </div>
+            <div class="icon upright">
+        		<a href="http://es.weather.yahoo.com/" title="Tiempo" class="ico_btn"><img src="/static/images/servicios/icon_weather.png" alt="Tiempo" /></a>
+                <p class="ico_txt">Tiempo</p>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="icon downleft">
+
+        		<a href="http://en.wikipedia.org/wiki/Clock" title="Clock" class="ico_btn"><img src="/static/images/servicios/icon_clock.png" alt="Clock" /></a>
+                <p class="ico_txt">Clock</p>
+            </div>
+            <div class="icon downleft">
+        		<a href="http://www.bolsa100.com/calculadora2.htm" title="Calculator" class="ico_btn"><img src="/static/images/servicios/icon_calculator.png" alt="Calculator" /></a>
+                <p class="ico_txt">Calcular</p>
+            </div>
+            <div class="icon downright">
+
+        		<a href="http://en.wikipedia.org/wiki/Note_taking" title="Notes" class="ico_btn"><img src="/static/images/servicios/icon_notes.png" alt="Notes" /></a>
+                <p class="ico_txt">Notes</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://css-tricks.com/" title="Settings" class="ico_btn"><img src="/static/images/servicios/icon_settings.png" alt="Settings" /></a>
+                <p class="ico_txt">Settings</p>
+            </div>
+        </div>
+
+        <div class="row">
+        	<div class="icon downleft">
+        		<a href="http://www.apple.com/itunes/" title="iTunes" class="ico_btn"><img src="/static/images/servicios/icon_itunes.png" alt="iTunes" /></a>
+                <p class="ico_txt">iTunes</p>
+            </div>
+            <div class="icon downleft">
+        		<a href="http://www.apple.com/iphone/appstore/" title="App Store" class="ico_btn"><img src="/static/images/servicios/icon_appstore.png" alt="App Store" /></a>
+                <p class="ico_txt">App Store</p>
+            </div>
+            <div class="icon downright">
+        		<a href="index.html" title="Respring" class="ico_btn"><img src="/static/images/servicios/icon_respring.png" alt="Respring" /></a>
+                <p class="ico_txt">Respring</p>
+            </div>
+            <div class="icon downright">
+        		<a href="http://www.marcofolio.net/" title="Marcofolio" class="ico_btn"><img src="/static/images/servicios/icon_marcofolio.png" alt="Marcofolio" /></a>
+                <p class="ico_txt">Marcofolio</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="apagar">
+    	<a id="enlace-apagar" href="/" title="Volver a la pagina de Inicio"></a>
+    </div>
+    
+</div>
+
+<div class="ContentFrame">
+    <div class="AllTabs">
+	<div class="TabContent">
+	    <p>
+	    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed lacus. Pellentesque lacus. Mauris ac libero. Nam tellus ipsum, volutpat in, vehicula vel, lacinia vitae, augue. Vestibulum enim nunc, porttitor sed, molestie sed, adipiscing sed, mauris. Proin augue. Phasellus venenatis metus at tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin felis. Suspendisse adipiscing velit sit amet sem tempor feugiat. Maecenas nulla nunc, suscipit a, aliquam sit amet, tincidunt a, urna. Praesent dignissim nunc quis metus.
+	    </p>
+	</div>
+	<div class="TabContent">
+	    <p>
+	    Aliquam at sem. Vestibulum fermentum. Donec rhoncus, turpis in molestie aliquam, arcu sem lobortis ante, ac condimentum nulla urna in justo. Nulla urna risus, hendrerit vitae, porttitor sed, vestibulum at, orci. Pellentesque et nisi. Sed dictum libero eu sapien. Aliquam erat volutpat. Aliquam non neque. Pellentesque sed dolor. Pellentesque ut nisi. 
+	    </p>
+	    <p>
+	    Proin sodales nibh vel velit. Etiam enim nunc, commodo vel, varius eget, volutpat ut, quam. Mauris quis urna. Morbi a augue. Mauris urna libero, posuere eget, pellentesque id.
+	    </p>
+	</div>
+	<div class="TabContent">
+	    <p>
+	    Pellentesque a ante sit amet arcu imperdiet congue. Morbi justo augue, pulvinar nec, pharetra fermentum, elementum sed, justo. Morbi vel sem. Pellentesque pharetra massa non leo aliquet consectetur. Nulla tincidunt. Fusce eget ligula a ipsum adipiscing gravida. Nullam cursus nibh non lectus. Sed eget enim. Donec sit amet odio. Morbi vel erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec suscipit est sit amet turpis. Donec rutrum vulputate eros. Curabitur metus. Morbi placerat faucibus tortor. 
+	    </p>
+	</div>
+    </div>
+</div>
+</body>
+</html>

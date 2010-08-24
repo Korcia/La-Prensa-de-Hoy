@@ -1,0 +1,122 @@
+{% extends "base_resumen_detail.html" %}
+{% block meta_name_description %}
+<meta name="description" content="Noticias detalladas.">
+{% endblock %}
+ {% comment %}{% load sidebar_tags %}{% endcomment %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#toc").append('<p class="bookmark">Marcadores:</p>')
+            $("h2").each(function(i) {
+                var current = $(this);
+                current.attr("id", "title" + i);
+
+                $("#toc").append("<a id='link" + i + "' href='#title" + i + "' title='" + current.attr("tagName") + "'>" + current.html() + "</a>");
+            });
+            
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#title0").css('cursor', 'pointer').click(function() {
+                $('#title0 + ul').toggle('slow');
+                return false;
+            }); 
+            $("#title1").css('cursor', 'pointer').click(function() {
+                $('#title1 + ul').toggle('slow');
+                return false;
+            }); 
+        });
+    </script>
+
+{% endblock %}
+
+
+{% block head_title %}Resumen: {{ object.titulo }}{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li class="current"><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+		<li><a title="mi cuenta" href="/usuarios/mi_cuenta">Mi Cuenta</a></li>
+	</ul>
+</div>	
+{% endblock %}
+
+{% block contenido %}
+    <div id="toc">
+    {% comment %}
+    <div id="sidebar2" class="sidebar">
+    {% get_archivos %}
+    {% if year_range %}
+    <h3>Archivos</h3>
+    {% for year in year_range %}
+        <h4>{{ year.year }}</h4>
+        <ul>
+        {% for month in month_range %}
+            {% ifequal year.year month.year %}
+                <li><a href="{{ ROOT_URL }}/noticias/{{ year.year }}/{{ month|date:"b" }}/">{{ month|date:"F" }}</a></li>
+            {% endifequal %}
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    {% endif %}
+    </div>
+    {% endcomment %}
+    </div>
+    <div id="resumen">
+        <h1>{{ object.titulo }}</h1>
+        <p><small>Publicado el {{ object.fecha_publicacion|date:"j \de F, Y" }}</small></p>
+        <div class="entry">
+        {{ object.cuerpo_html|safe }}
+        </div>
+    </div>
+{% endblock %}
+    {% comment %}
+    <div class="sidebar">
+    <div class="sidebaritem">
+    <div class="sidebaritem_top"><a class="title" href="#">Archivos</a></div>    
+        {% get_archivos %}
+        {% if year_range %}
+        {% for year in year_range %}
+            <h4>{{ year.year }}</h4>
+            <ul>
+            {% for month in month_range %}
+                {% ifequal year.year month.year %}
+                    <li><a href="{{ ROOT_URL }}/resumenes/{{ year.year }}/{{ month|date:"b" }}/">{{ month|date:"F" }}</a></li>
+                {% endifequal %}
+            {% endfor %}
+        </ul>
+        {% endfor %}
+        {% endif %}
+    </div>    
+    </div>
+    <div class="blank"></div>
+
+{% endcomment %}
+{% comment %} 
+{% block sidebar %}
+    <div id="sidebar2" class="sidebar">
+    {% get_archivos %}
+    {% if year_range %}
+    <h3>Archivos</h3>
+    {% for year in year_range %}
+        <h4>{{ year.year }}</h4>
+        <ul>
+        {% for month in month_range %}
+            {% ifequal year.year month.year %}
+                <li><a href="{{ ROOT_URL }}/resumenes/{{ year.year }}/{{ month|date:"b" }}/">{{ month|date:"F" }}</a></li>
+            {% endifequal %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}
+{% endcomment %}

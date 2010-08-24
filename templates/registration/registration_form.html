@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ block.super }} Inicio{% endblock %}
+{% block meta_name_description  %}
+<meta name="description" content="Buscador de conciertos de música clásica, ópera, barroco, antigua, contemporanea, zarzuela y ballet. Agenda musical clasica.">
+{% endblock %}
+
+{% block page_title %}Bienvenido a La Prensa de Hoy{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li class="current"><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+	</ul>
+    <div id="logon">
+        <a href="/usuarios/login/?next=/">Login</a><span> / </span><a href="/usuarios/register/">Registrarse</a>
+    </div>		
+</div>	
+{% endblock %}
+
+{% block contenido %}
+    <div id="content">
+        <div class="text_resultados">
+            <h2>Suscripción a La Prensa de Hoy</h2>
+        <form action="" method="post">
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </form>
+        </div> 
+    </div>
+{% endblock contenido %}

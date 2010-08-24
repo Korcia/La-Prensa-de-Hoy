@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block meta_name_description %}
+<meta name="description" content="Archivo anual de artículos de música clásica.">
+{% endblock %}
+
+{% load sidebar_tags %}
+
+{% block head_title %}Noticias publicadas en {{ year }}{% endblock %}
+{% block content %}
+    <div id="content">
+ 
+    <h2>Noticias publicadas en {{ year }}</h2>
+    <div class="post">
+    <ul>
+    {% for month in date_list %}
+      <li><a href="/noticias/{{ year }}/{{ month|date:"b" }}/">{{ month|date:"F" }}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+    </div>
+{% endblock %}
+{% block sidebar %}
+    <div id="sidebar2" class="sidebar">
+    {% get_archivos %}
+    {% if year_range %}
+    <h3>Archivos</h3>
+    {% for year in year_range %}
+        <h4>{{ year.year }}</h4>
+        <ul>
+        {% for month in month_range %}
+            {% ifequal year.year month.year %}
+                <li><a href="{{ ROOT_URL }}/noticias/{{ year.year }}/{{ month|date:"b" }}/">{{ month|date:"F" }}</a></li>
+            {% endifequal %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}
+

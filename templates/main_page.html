@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head_title %}{{ block.super }} Inicio{% endblock %}
+{% block meta_name_description  %}
+<meta name="description" content="Buscador de conciertos de música clásica, ópera, barroco, antigua, contemporanea, zarzuela y ballet. Agenda musical clasica.">
+{% endblock %}
+
+	{% block estilo %}<link href="/static/css/layerpos.css" rel="stylesheet" type="text/css" media="screen" />{% endblock %}
+	{% block js %}<script type='text/javascript' src='/static/js/webticker_lib.js'></script>{% endblock %}
+
+{% block page_title %}Bienvenido a La Prensa de Hoy{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li class="current"><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+		<li><a title="mi cuenta" href="/usuarios/mi_cuenta">Mi Cuenta</a></li>
+	</ul>
+</div>	
+{% endblock %}
+
+{% block contenido %}
+    <div id="content">
+        <div class="text_big">
+            <h2>¡Bienvenido!</h2>
+
+            <p>La Prensa de Hoy es un servicio de resúmenes diarios de prensa económica.</p>
+            <p>Con opciones de búsqueda sobre el archivo de resúmenes publicados y comparativa por palabras clave.</p>
+        </div> 
+        <div class="download">
+            <a href="/usuarios/register/"><strong>¡Suscríbase!</strong><span>Resumen diario</span></a>
+
+        </div>
+        <div class="image">
+            <img src="/static/images/img.png" alt="ubuntu-tweak" title="Ubuntu Tweak" />
+        </div>
+    </div>
+{% endblock contenido %}

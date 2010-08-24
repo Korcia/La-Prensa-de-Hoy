@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block head_title %}{{ block.super }} Inicio{% endblock %}
+{% block meta_name_description  %}
+<meta name="description" content="La Prensa de Hoy es un servicio de resúmenes diarios de prensa económica.">
+{% endblock %}
+
+	{% block estilo %}<link href="/static/css/layerpos.css" rel="stylesheet" type="text/css" media="screen" />{% endblock %}
+	{% block js %}
+	<script type='text/javascript' src='/static/js/jquery.cycle.all.min.js'></script>
+	<script type="text/javascript">
+    //<![CDATA[
+    jQuery(function(){
+    	jQuery.noConflict();
+    	
+		jQuery('#spotlight').cycle({
+			timeout: 7000,
+			speed: 1000,
+			pause: 1,
+			prev: 'a#previous',
+			next: '#next', 
+			fx: 'fade'
+		});
+		
+				
+	});
+    //]]>
+    </script>	
+	{% endblock %}
+
+{% block page_title %}Bienvenido a La Prensa de Hoy{% endblock %}
+{% block navi %}
+<div id="navi">
+    <ul class="lavaLamp">
+		<li class="current"><a title="Inicio La Prensa de Hoy" href="/">Inicio</a></li>
+		<li><a title="buscar" href="/buscar/">Búsqueda</a></li>
+		<li><a title="noticias" href="/resumenes/">Resúmenes</a></li>
+		<li><a title="suscríbase" href="/usuarios/register/">Suscripción</a></li>
+		<li><a title="contacte con La Prensa de Hoy" href="/contacto/">Contacto</a></li>
+		<li><a title="ayuda" href="/entrada_servicios/">Servicios</a></li>
+		<li><a title="mi cuenta" href="/usuarios/mi_cuenta">Mi Cuenta</a></li>
+	</ul>
+</div>	
+{% endblock %}
+
+{% block contenido %}
+<!-- Start Featured -->	
+	<div id="featured">
+		<div id="left_arrow">
+		<a href="#" id="previous"><img src="static/images/fleft_arrow.png"
+        alt="Anterior" height="70" width="32"></a>
+        </div>
+			
+		<!-- Featured Content -->
+		<div id="featured_content"> 
+				
+			<!-- Featured Articles -->
+			<div style="position: relative; width: 450px; height: 277px;" id="spotlight">
+				<div style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 800px; height: 277px;" 
+                     class="slide">
+					<h1>La Prensa de Hoy: Resumen diario</h1>
+					<br class="clear">
+					<img src="/static/images/periodicos.jpg"
+                     class="featured_img wp-post-image" alt="resumen de prensa" title="diarios" height="190" width="253">						
+					<span class="letra_slide">
+					La Prensa de Hoy es un servicio de resúmenes diarios de prensa económica.
+					Aquí encontrará las noticias más destacadas
+					publicadas en los principales periódicos del pais.<br>
+					Entre nuestro clientes destacan:
+					<ul>
+						<li>Microsoft</li>
+						<li>Vodafone</li>
+						<li>Bosch</li>
+					</ul> 
+					</span>							
+				</div>
+				<div style="position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 800px; height: 277px; opacity: 0;" 
+                     class="slide">
+					<h1>Facilidad de Uso</h1>
+					<br class="clear">
+					<img src="/static/images/prensadehoy.png"
+                     class="featured_img wp-post-image" alt="prensa de hoy" title="resumen" height="200" width="233">
+					<span class="letra_slide">
+					laprensadehoy.es organiza los resúmenes de forma cronológica.
+					&nbsp;De esta forma facilita el acceso a noticias ya publicadas anteriormente.&nbsp;
+					Proporciona además un menú de  navegación muy sencillo pudiendo acceder a las diferentes
+					&nbsp;secciones (Economía, Empresas, Telecomunicaciones,Finanzas, etc) de forma
+					inmediata.  
+					</span>			
+				</div>
+				<div style="position: absolute; top: 0px; left: 0px; display: none; z-index: 4; opacity: 0; width: 800px; height: 277px;" 
+                     class="slide">
+					<h1>Búsqueda en el Archivo de Resúmenes</h1>
+					<br class="clear">
+					<img src="/static/images/resultados_busqueda.png"
+                     class="featured_img wp-post-image" alt="Búsqueda en la Prensa de Hoy"
+             		 title="resultados de búsqueda" height="200" width="325">
+             		<span class="letra_slide">
+             		laprensadehoy.es le proporciona una herramienta de búsqueda de gran valor. Con ella
+             		&nbsp;podrá realizar la búsqueda de una empresa o entidad y le devolverá en la página
+             		de resultados las noticias en las que aparece la palabra que haya introducido de forma
+             		cronológica empezando por las más recientes. Podrá limitar esta búsqueda a un periodo
+             		de tiempo determinado (último día, última semana, último mes o último año).
+             		En los resultados de la búsqueda podrá leer la noticia completa y aparecerá un enlace
+             		con el cual podrá ir a leer el documento completo original.							
+					</span>
+				</div>
+				<div style="position: absolute; top: 0px; left: 0px; display: none; z-index: 4; opacity: 0; width: 800px; height: 277px;" 
+                     class="slide">
+					<h1>A Primera Hora de la Mañana</h1>
+					<br class="clear">
+					<img src="/static/images/sunrise.jpg"
+                     class="featured_img wp-post-image" alt="primera hora" title="primera hora" height="156" width="250">
+					<span class="letra_slide">
+					A diferencia de otros servicios, La Prensa de Hoy aparece diariamente a primera hora
+					de la mañana con lo cual puede estar consultando todas las noticias relevantes
+					antes de llegar a su oficina.
+					</span>
+				</div>
+			</div>
+			<!-- End Featured Articles -->
+		</div>
+		<div id="right_arrow"><a href="#" id="next"><img src="/static/images/fright_arrow.png"
+        alt="Siguiente" height="70" width="32"></a>
+		</div>
+		<!-- End Featured -->
+	</div>
+	<div style="clear:both;"></div>
+{% endblock contenido %}
